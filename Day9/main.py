@@ -1,6 +1,7 @@
 from art import logo
 import os
 
+print(logo)
 bidders= {}
 
 
