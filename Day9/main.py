@@ -13,7 +13,7 @@ while True:
     if is_there_other == 'yes':
         os.system('cls')
         continue
-    else:
+    elif is_there_other == 'no':
         max_bid = 0
         winner = ""
         for key in bidders:
@@ -23,4 +23,7 @@ while True:
                 print(f"The winner is {winner} with a bid of ${max_bid}")
                 
         break
+    else:
+        print("Invalid input ")
+        continue
 
