@@ -20,7 +20,7 @@ def Ceasar_Cipher(text,shift,direction):
         if direction == 'decode':
             if not char == ' ':
                  index_of_shifted_leter = shifted_alphabet.index(char)
-                 decrypted_word+=alphabet[index_of_shifted_leter]
+                 shifted_word+=alphabet[index_of_shifted_leter]
             else:
                  shifted_word+=" "
     return shifted_word
@@ -43,8 +43,8 @@ while True:
 
 
     print(f"Here's the {direction} result: {Ceasar_Cipher(text,shift,direction)}")
-    whant_coun= input("Type 'yes' if you want to go again. Otherwise type 'no'\n").lower()
-    if whant_coun == 'no':
+    want_toCont= input("Type 'yes' if you want to go again. Otherwise type 'no'\n").lower()
+    if want_toCont == 'no':
         print("Good By")
         break
 
