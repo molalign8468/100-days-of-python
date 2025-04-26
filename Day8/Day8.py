@@ -7,31 +7,26 @@ print(logo)
 def generate_shifted(shift):
     return [alphabet[(i + shift) % 26] for i in range(len(alphabet))]
 
-
-
-def encrypt(text,shift):
+def Ceasar_Cipher(text,shift,direction):
     shifted_alphabet = generate_shifted(shift)
-    encrypted_word = ""
-    
-    for char in text :
-        if not char == ' ':
-            index_of_shifted_leter = alphabet.index(char)
-            encrypted_word+=shifted_alphabet[index_of_shifted_leter]
-        else:
-            encrypted_word+=" "
-    return encrypted_word
+    shifted_word = ""
+    for char in text:
+        if direction == 'encode':
+             if not char == ' ':
+                 index_of_shifted_leter = alphabet.index(char)
+                 shifted_word+=shifted_alphabet[index_of_shifted_leter]
+             else:
+                 shifted_word+=" "
+        if direction == 'decode':
+            if not char == ' ':
+                 index_of_shifted_leter = shifted_alphabet.index(char)
+                 decrypted_word+=alphabet[index_of_shifted_leter]
+            else:
+                 shifted_word+=" "
+    return shifted_word
+        
 
-def decrypt(text,shift):
-    shifted_alphabet = generate_shifted(shift)
-    decrypted_word = ""
-    for char in text :
-        if not char == ' ':
-            index_of_shifted_leter = shifted_alphabet.index(char)
-            decrypted_word+=alphabet[index_of_shifted_leter]
-        else:
-            decrypted_word+=" "
 
-    return decrypted_word
 
 
 while True:
@@ -46,10 +41,8 @@ while True:
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
 
-    if direction == 'decode':
-        print(decrypt(text,shift))
-    if direction == 'encode':
-        print(encrypt(text,shift))
+
+    print("Ceasar_Cipher(text,shift,direction)")
     whant_coun= input("Type 'yes' if you want to go again. Otherwise type 'no'\n").lower()
     if whant_coun == 'no':
         print("Good By")
