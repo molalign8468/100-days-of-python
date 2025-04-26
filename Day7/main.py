@@ -40,3 +40,5 @@ while not game_over:
         print(f"*********************** IT WAS '{chosen_word}'! YOU LOSE **********************")
 
     print(stages[lives])
+
+    
