@@ -2,30 +2,31 @@ from art import logo
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 print(logo)
+
+
+def generate_shifted(shift):
+    return [alphabet[(i + shift) % 26] for i in range(len(alphabet))]
+
+
+
 def encrypt(text,shift):
-    shifted_list = []
+    shifted_alphabet = generate_shifted(shift)
     encrypted_word = ""
-    for i in range(len(alphabet)):
-        new_index = (i + shift) % 26
-        shifted_list.append(alphabet[new_index])
-         
+    
     for char in text :
         if not char == ' ':
             index_of_shifted_leter = alphabet.index(char)
-            encrypted_word+=shifted_list[index_of_shifted_leter]
+            encrypted_word+=shifted_alphabet[index_of_shifted_leter]
         else:
             encrypted_word+=" "
     return encrypted_word
 
 def decrypt(text,shift):
-    shifted_list = []
+    shifted_alphabet = generate_shifted(shift)
     decrypted_word = ""
-    for i in range(len(alphabet)):
-        new_index = (i+shift)%26
-        shifted_list.append(alphabet[new_index])
     for char in text :
         if not char == ' ':
-            index_of_shifted_leter = shifted_list.index(char)
+            index_of_shifted_leter = shifted_alphabet.index(char)
             decrypted_word+=alphabet[index_of_shifted_leter]
         else:
             decrypted_word+=" "
