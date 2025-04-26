@@ -42,7 +42,7 @@ while True:
     shift = int(input("Type the shift number:\n"))
 
 
-    print("Ceasar_Cipher(text,shift,direction)")
+    print(f"Here's the {direction} result: {Ceasar_Cipher(text,shift,direction)}")
     whant_coun= input("Type 'yes' if you want to go again. Otherwise type 'no'\n").lower()
     if whant_coun == 'no':
         print("Good By")
