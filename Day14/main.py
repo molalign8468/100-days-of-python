@@ -1,4 +1,5 @@
 import random
+import os
 from data import data
 import art
 
@@ -23,12 +24,15 @@ while not isGame_over:
    print(f"Compare B: {opponent_B["name"]}, a {opponent_B["description"]}, from {opponent_B["country"]}.")
    user_in = input("Who has more followers? Type 'A' or 'B': ").lower()
 
+
+
    if user_in == result :
      score+=1
      print(f"Correct! Current score: {score}\n")
      opponent_A = opponent_B
      opponent_B = random.choice(data)
-    
+     os.system('clear')
+
      result = who_has_bigger(opponent_A["follower_count"],opponent_B["follower_count"])
 
    else:
@@ -36,6 +40,7 @@ while not isGame_over:
       print(f"\nSorry, that's wrong. Final score: {score}")
       
 print("Game Over!")
+
 
 
 
