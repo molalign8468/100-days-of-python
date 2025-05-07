@@ -6,6 +6,7 @@ opponent_A = random.choice(data)
 opponent_B = random.choice(data)
 
 def who_has_bigger(A,B):
+    '''Compare Both celebrity's '''
     if A > B:
       return "a"
     elif A< B:
