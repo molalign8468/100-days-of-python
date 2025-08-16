@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+  color: aliceblue;
+  height: 100vh;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+img {
+  width: 50vw;
+  height: 50vh;
+  border: 5px solid yellow;
+}
+h1 {
+  color: yellow;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+p {
+  margin-top: 0;
+  color: aliceblue;
+  letter-spacing: 1px;
+  font-weight: lighter;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
