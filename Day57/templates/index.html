@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="top">
+        <h1 class="title">My Blog</h1>
+      </header>
+
+      <main class="content">
+        {% for blog in blogs %}
+        <article class="card">
+          <h2>{{ blog.title }}</h2>
+          <p class="text">{{ blog.subtitle }}</p>
+          <a
+            href="{{ url_for('each_post', post_id=blog.id) }}"
+            class="read-more"
+            >Read</a
+          >
+        </article>
+        {% endfor %}
+      </main>
+
+      <footer>
+        <p>Made with ♥️ in London.</p>
+      </footer>
+    </div>
+  </body>
+</html>
