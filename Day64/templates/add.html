@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Add Movie{% endblock %} {% block content %}
+<div class="content">
+  {% with messages = get_flashed_messages() %} {% if messages %} {% for message
+  in messages %}
+  <div
+    class="alert alert-warning alert-dismissible fade show mt-3"
+    role="alert"
+  >
+    {{ message }}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %} {% endif %} {% endwith %}
+
+  <h1 class="heading mt-4">Add a Movie</h1>
+
+  {{ render_form(form) }}
+</div>
+{% endblock %}
